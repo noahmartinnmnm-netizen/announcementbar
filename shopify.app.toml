@@ -2,7 +2,7 @@
 
 client_id = "0d5a4aeb03e94d71e4b0055101baa4aa"
 name = "Smart Announcement Bar"
-application_url = "https://example.com"
+application_url = "https://announcementbar-ngcz.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -31,7 +31,7 @@ api_version = "2026-07"
   topics = [ "app/scopes_update" ]
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://announcementbar-ngcz.onrender.com/auth/callback" ]
 
 [build]
 automatically_update_urls_on_dev = true
