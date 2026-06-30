@@ -1,0 +1,5 @@
+api_version = "2025-10"
+name = "Smart Announcement Bar"
+type = "theme"
+handle = "smart-announcement-bar"
+uid = "d8c2b69c-d365-c875-2bee-7c8148bb4269771843c2"

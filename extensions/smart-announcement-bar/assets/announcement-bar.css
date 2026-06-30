@@ -1,0 +1,1668 @@
+/* Smart Announcement Bar — storefront styles */
+
+
+
+.smart-announcement-root {
+
+  contain: layout style;
+
+}
+
+
+
+.smart-announcement-stack {
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  pointer-events: none;
+
+}
+
+
+
+.smart-announcement-stack--top {
+
+  position: relative;
+
+  z-index: 9999;
+
+}
+
+
+
+.smart-announcement-stack--bottom {
+
+  position: relative;
+
+  z-index: 9998;
+
+}
+
+
+
+.smart-announcement-stack--sticky-top {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+}
+
+
+
+.smart-announcement-stack--sticky-bottom {
+
+  position: fixed;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+
+}
+
+
+
+.smart-announcement-bar {
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  pointer-events: auto;
+
+  contain: layout style paint;
+
+  transition: opacity 0.2s ease;
+
+}
+
+
+
+.smart-announcement-bar[hidden] {
+
+  display: none !important;
+
+}
+
+
+
+.smart-announcement-bar__inner {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+}
+
+
+
+.smart-announcement-bar__content {
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 8px;
+
+}
+
+
+
+.smart-announcement-bar__layout {
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  grid-template-rows: auto auto;
+
+  gap: 4px 12px;
+
+  align-items: center;
+
+  width: 100%;
+
+  min-width: 0;
+
+}
+
+
+
+.smart-announcement-bar__titles {
+
+  grid-column: 1;
+
+  grid-row: 1;
+
+  min-width: 0;
+
+  text-align: left;
+
+}
+
+
+
+.smart-announcement-bar__subheading {
+
+  grid-column: 1;
+
+  grid-row: 2;
+
+  display: block;
+
+  font-size: 0.9em;
+
+  opacity: 0.85;
+
+  line-height: 1.3;
+
+  text-align: left;
+
+}
+
+
+
+.smart-announcement-bar__actions {
+
+  grid-column: 2;
+
+  grid-row: 1 / span 2;
+
+  align-self: center;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+}
+
+
+
+.smart-announcement-bar__title {
+
+  display: block;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+}
+
+
+
+.smart-announcement-bar__message {
+
+  display: block;
+
+  line-height: 1.4;
+
+}
+
+
+
+.smart-announcement-bar__message[aria-hidden="true"] {
+
+  visibility: hidden;
+
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+}
+
+
+
+/* Rotating announcement bar — centered carousel with nav arrows */
+
+.smart-announcement-bar--rotating .smart-announcement-bar__inner {
+
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-content .smart-announcement-bar__inner {
+
+  justify-content: center;
+
+  gap: 4px;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__inner {
+
+  justify-content: center;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-content .smart-announcement-bar__content {
+
+  flex: 0 1 auto;
+
+  min-width: 0;
+
+  max-width: calc(100% - 72px);
+
+  justify-content: center;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__content {
+
+  flex: 0 1 auto;
+
+  min-width: 0;
+
+  max-width: calc(100% - 56px);
+
+  margin: 0 auto;
+
+  justify-content: center;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges.smart-announcement-bar--dismissible
+  .smart-announcement-bar__content {
+
+  max-width: calc(100% - 84px);
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__nav--prev {
+
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__nav--next {
+
+  position: absolute;
+
+  right: 0;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+}
+
+
+
+.smart-announcement-bar--rotating.smart-announcement-bar--nav-edges.smart-announcement-bar--dismissible
+  .smart-announcement-bar__nav--next {
+
+  right: 28px;
+
+}
+
+
+
+.smart-announcement-bar--rotating .smart-announcement-bar__layout--rotating {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+}
+
+
+
+.smart-announcement-bar__slide-viewport {
+
+  overflow: hidden;
+
+  width: 100%;
+
+  min-width: 0;
+
+}
+
+
+
+.smart-announcement-bar__slide {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  min-width: 0;
+
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+
+}
+
+
+
+.smart-announcement-bar__slide .smart-announcement-bar__copy {
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  text-align: center;
+
+}
+
+
+
+.smart-announcement-bar__slide .smart-announcement-bar__titles {
+
+  min-width: 0;
+
+  width: auto;
+
+}
+
+
+
+.smart-announcement-bar__slide .smart-announcement-bar__actions {
+
+  flex: 0 0 auto;
+
+}
+
+
+
+.smart-announcement-bar__slide--in-right {
+
+  animation: sab-rotate-in-right 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar__slide--in-left {
+
+  animation: sab-rotate-in-left 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar--rotating .smart-announcement-bar__message-viewport {
+
+  overflow: hidden;
+
+  min-height: 1.4em;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+.smart-announcement-bar--rotating .smart-announcement-bar__message {
+
+  display: block;
+
+  text-align: center;
+
+  width: auto;
+
+  max-width: 100%;
+
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  white-space: nowrap;
+
+}
+
+
+
+.smart-announcement-bar--rotating .smart-announcement-bar__actions {
+
+  flex: 0 0 auto;
+
+  gap: 6px;
+
+}
+
+
+
+.smart-announcement-bar--rotating .smart-announcement-bar__message[aria-hidden="true"] {
+
+  display: none !important;
+
+}
+
+
+
+@keyframes sab-rotate-out-left {
+
+  from {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+  to {
+
+    opacity: 0;
+
+    transform: translateX(-18px);
+
+  }
+
+}
+
+
+
+@keyframes sab-rotate-out-right {
+
+  from {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+  to {
+
+    opacity: 0;
+
+    transform: translateX(18px);
+
+  }
+
+}
+
+
+
+@keyframes sab-rotate-in-right {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(18px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+}
+
+
+
+@keyframes sab-rotate-in-left {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateX(-18px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+  }
+
+}
+
+
+
+.smart-announcement-bar__message--out-left {
+
+  animation: sab-rotate-out-left 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar__message--out-right {
+
+  animation: sab-rotate-out-right 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar__message--in-right {
+
+  animation: sab-rotate-in-right 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar__message--in-left {
+
+  animation: sab-rotate-in-left 0.26s ease forwards;
+
+}
+
+
+
+.smart-announcement-bar__nav {
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 28px;
+
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: inherit;
+
+  opacity: 0.72;
+
+  cursor: pointer;
+
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+
+}
+
+
+
+.smart-announcement-bar__nav:hover {
+
+  opacity: 1;
+
+  background: rgba(127, 127, 127, 0.16);
+
+}
+
+
+
+.smart-announcement-bar__nav:focus-visible {
+
+  outline: 2px solid currentColor;
+
+  outline-offset: 2px;
+
+}
+
+
+
+.smart-announcement-bar__cta {
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 6px 14px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  line-height: 1.2;
+
+}
+
+
+
+.smart-announcement-bar__close {
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 28px;
+
+  height: 28px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  opacity: 0.75;
+
+  line-height: 1;
+
+  font-size: 1.25rem;
+
+}
+
+
+
+.smart-announcement-bar__close:hover,
+
+.smart-announcement-bar__close:focus-visible {
+
+  opacity: 1;
+
+}
+
+
+
+.smart-announcement-bar__close:focus-visible {
+
+  outline: 2px solid currentColor;
+
+  outline-offset: 2px;
+
+}
+
+
+
+body.smart-announcement--pad-top {
+
+  transition: padding-top 0.15s ease;
+
+}
+
+
+
+body.smart-announcement--pad-bottom {
+
+  transition: padding-bottom 0.15s ease;
+
+}
+
+
+
+.smart-announcement-bar__cta--link {
+
+  background: transparent !important;
+
+  padding: 0;
+
+  text-decoration: underline;
+
+}
+
+
+
+.smart-announcement-bar__coupon-wrap {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  padding: 4px 10px;
+
+  border: 1px dotted currentColor;
+
+  border-radius: 4px;
+
+  background: transparent;
+
+}
+
+
+
+.smart-announcement-bar__coupon-code {
+
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+  font-size: 0.95em;
+
+  line-height: 1.2;
+
+}
+
+
+
+.smart-announcement-bar__coupon-copy {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  line-height: 0;
+
+}
+
+
+
+.smart-announcement-bar__coupon-copy:hover,
+
+.smart-announcement-bar__coupon-copy:focus-visible {
+
+  opacity: 0.75;
+
+}
+
+
+
+.smart-announcement-bar__coupon-copy:focus-visible {
+
+  outline: 2px solid currentColor;
+
+  outline-offset: 2px;
+
+  border-radius: 2px;
+
+}
+
+
+
+.smart-announcement-bar__coupon-copy[data-copied]::after {
+
+  content: "Copied";
+
+  font-size: 0.75em;
+
+  margin-left: 4px;
+
+  line-height: 1;
+
+}
+
+
+
+.smart-announcement-bar__icon {
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  flex-shrink: 0;
+
+  width: 18px;
+
+  height: 18px;
+
+  max-width: 18px;
+
+  max-height: 18px;
+
+  object-fit: contain;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__inner {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  min-height: inherit;
+
+  gap: 0;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-track {
+
+  position: relative;
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  pointer-events: none;
+
+  isolation: isolate;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-track,
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-stage,
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee {
+
+  direction: ltr;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-stage {
+
+  box-sizing: border-box;
+
+  width: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-stage--left,
+
+.smart-announcement-bar--running-left .smart-announcement-bar__marquee-stage {
+
+  justify-content: flex-start;
+
+  padding-left: 0;
+
+  text-align: left;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-stage--right,
+
+.smart-announcement-bar--running-right .smart-announcement-bar__marquee-stage {
+
+  justify-content: flex-start;
+
+  padding-left: 100%;
+
+  text-align: left;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  width: max-content;
+
+  will-change: transform;
+
+}
+
+
+
+.smart-announcement-bar__marquee--animated {
+
+  animation: smart-announcement-marquee-right var(--smart-announcement-marquee-duration, 20s) linear infinite;
+
+  animation-play-state: running;
+
+}
+
+
+
+.smart-announcement-bar__marquee--animated-left {
+
+  animation: smart-announcement-marquee-left var(--smart-announcement-marquee-duration, 20s) linear infinite;
+
+  animation-play-state: running;
+
+}
+
+
+
+.smart-announcement-bar--pause-on-hover:hover .smart-announcement-bar__marquee--animated,
+.smart-announcement-bar--pause-on-hover:hover .smart-announcement-bar__marquee--animated-left {
+  animation-play-state: paused;
+}
+
+
+
+@keyframes smart-announcement-marquee-right {
+
+  from {
+
+    transform: translate3d(0, 0, 0);
+
+  }
+
+  to {
+
+    transform: translate3d(-50%, 0, 0);
+
+  }
+
+}
+
+
+
+@keyframes smart-announcement-marquee-left {
+
+  from {
+
+    transform: translate3d(-50%, 0, 0);
+
+  }
+
+  to {
+
+    transform: translate3d(0, 0, 0);
+
+  }
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__marquee-unit {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__icon-overlay {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  align-self: center;
+
+  padding-right: 8px;
+
+  background: var(--smart-announcement-bg, inherit);
+
+  pointer-events: none;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__actions-rail {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  flex-shrink: 0;
+
+  gap: 8px;
+
+  padding-left: 12px;
+
+  background: var(--smart-announcement-bg, inherit);
+
+  pointer-events: auto;
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__actions-overlay {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex: 0 0 auto;
+
+  flex-shrink: 0;
+
+  background: var(--smart-announcement-bg, inherit);
+
+}
+
+
+
+.smart-announcement-bar--running .smart-announcement-bar__close {
+
+  position: static;
+
+  transform: none;
+
+  flex-shrink: 0;
+
+}
+
+
+
+@media (min-width: 750px) {
+
+  .smart-announcement-bar--simple .smart-announcement-bar__inner,
+  .smart-announcement-bar--rotating .smart-announcement-bar__inner {
+
+    justify-content: center;
+
+    position: relative;
+
+    padding-right: 36px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating.smart-announcement-bar--nav-content .smart-announcement-bar__inner {
+
+    justify-content: center;
+
+    gap: 4px;
+
+    padding-right: 32px;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__inner {
+
+    justify-content: center;
+
+    padding-right: 32px;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating.smart-announcement-bar--nav-content .smart-announcement-bar__content {
+
+    flex: 0 1 auto;
+
+    min-width: 0;
+
+    max-width: calc(100% - 72px);
+
+    justify-content: center;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating.smart-announcement-bar--nav-edges .smart-announcement-bar__content {
+
+    flex: 0 1 auto;
+
+    min-width: 0;
+
+    max-width: calc(100% - 56px);
+
+    margin: 0 auto;
+
+    justify-content: center;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating.smart-announcement-bar--nav-edges.smart-announcement-bar--dismissible
+    .smart-announcement-bar__content {
+
+    max-width: calc(100% - 84px);
+
+  }
+
+
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__layout--rotating {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 100%;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__slide {
+
+    flex-wrap: nowrap;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__title,
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__message {
+
+    display: block;
+
+    white-space: nowrap;
+
+    overflow-wrap: normal;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__content {
+
+    flex: 0 0 auto;
+
+    min-width: auto;
+
+    justify-content: center;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__layout {
+
+    width: max-content;
+
+    max-width: none;
+
+    min-width: auto;
+
+    grid-template-columns: auto auto;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__close,
+  .smart-announcement-bar--rotating .smart-announcement-bar__close {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__titles {
+
+    min-width: auto;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__title,
+
+  .smart-announcement-bar--simple .smart-announcement-bar__message {
+
+    display: inline;
+
+    white-space: nowrap;
+
+  }
+
+}
+
+
+
+.smart-announcement-bar__marquee-track {
+
+  overflow: hidden;
+
+  width: 100%;
+
+  min-width: 0;
+
+}
+
+
+
+.smart-announcement-bar__marquee-segment {
+
+  display: inline-flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+}
+
+
+
+.smart-announcement-bar__marquee-spacer {
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  width: 96px;
+
+  height: 1px;
+
+}
+
+
+
+.smart-announcement-bar__marquee-segment .smart-announcement-bar__subheading {
+
+  display: block;
+
+  font-size: 0.9em;
+
+  opacity: 0.85;
+
+  line-height: 1.3;
+
+}
+
+
+
+.smart-announcement-stack--cart-page,
+
+.smart-announcement-stack--cart-drawer {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  pointer-events: auto;
+
+}
+
+
+
+.smart-announcement-stack--cart-drawer {
+
+  z-index: 5;
+
+  flex-shrink: 0;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+@media (max-width: 749px) {
+
+  .smart-announcement-bar__inner {
+
+    flex-wrap: nowrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+  }
+
+
+
+  .smart-announcement-bar__layout {
+
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    gap: 4px 8px;
+
+  }
+
+
+
+  .smart-announcement-bar__titles,
+
+  .smart-announcement-bar__subheading {
+
+    text-align: center;
+
+  }
+
+
+
+  .smart-announcement-bar--running-left .smart-announcement-bar__titles,
+
+  .smart-announcement-bar--running-right .smart-announcement-bar__titles {
+
+    text-align: left;
+
+  }
+
+
+
+  .smart-announcement-bar--running .smart-announcement-bar__actions-rail {
+
+    gap: 6px;
+
+    padding-left: 8px;
+
+  }
+
+
+
+  .smart-announcement-bar--running .smart-announcement-bar__actions-overlay {
+
+    gap: 6px;
+
+  }
+
+
+
+  .smart-announcement-bar--running .smart-announcement-bar__icon-overlay {
+
+    padding-right: 6px;
+
+  }
+
+
+
+  .smart-announcement-bar__title,
+
+  .smart-announcement-bar__message {
+
+    font-size: 0.92em;
+
+    line-height: 1.25;
+
+  }
+
+
+
+  .smart-announcement-bar__subheading {
+
+    font-size: 0.82em;
+
+  }
+
+
+
+  .smart-announcement-bar__actions {
+
+    flex-wrap: nowrap;
+
+    gap: 6px;
+
+  }
+
+
+
+  .smart-announcement-bar__cta {
+
+    padding: 6px 10px;
+
+    font-size: 0.82em;
+
+  }
+
+
+
+  .smart-announcement-bar__coupon-wrap {
+
+    padding: 3px 8px;
+
+    gap: 6px;
+
+  }
+
+
+
+  .smart-announcement-bar__coupon-code {
+
+    font-size: 0.82em;
+
+  }
+
+
+
+  .smart-announcement-bar__close {
+
+    width: 24px;
+
+    height: 24px;
+
+    font-size: 1.1rem;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__titles {
+
+    white-space: normal;
+
+  }
+
+
+
+  .smart-announcement-bar--simple .smart-announcement-bar__title,
+
+  .smart-announcement-bar--simple .smart-announcement-bar__message {
+
+    display: block;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__slide {
+
+    flex-direction: column;
+
+    gap: 8px;
+
+  }
+
+
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__title,
+
+  .smart-announcement-bar--rotating .smart-announcement-bar__message {
+
+    display: block;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+
+  }
+
+}
+
+
+
+.smart-announcement-stack--cart-drawer .smart-announcement-bar__inner {
+
+  flex-wrap: nowrap;
+
+}
+
+
+
+.smart-announcement-bar__custom-code {
+
+  display: contents;
+
+}
+

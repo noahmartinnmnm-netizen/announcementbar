@@ -1,0 +1,13 @@
+{
+  "name": "smart-announcement-bar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --minify --outfile=assets/announcement-bar.js --format=iife --target=es2020 --legal-comments=none --tsconfig=tsconfig.json",
+    "dev": "esbuild src/index.ts --bundle --outfile=assets/announcement-bar.js --format=iife --target=es2020 --watch --tsconfig=tsconfig.json"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.3"
+  }
+}

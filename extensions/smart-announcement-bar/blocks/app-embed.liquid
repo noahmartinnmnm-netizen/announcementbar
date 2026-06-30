@@ -1,0 +1,32 @@
+{% comment %}
+  Smart Announcement Bar — App Embed
+  Merchants enable this embed in Theme settings → App embeds. No Liquid edits required.
+{% endcomment %}
+
+{% assign announcement_settings = shop.metafields['$app:smart_announcement'].settings.value %}
+
+<script type="application/json" id="smart-announcement-settings">
+  {% if announcement_settings %}
+    {{ announcement_settings | json }}
+  {% else %}
+    {"bars":[]}
+  {% endif %}
+</script>
+
+<div
+  id="smart-announcement-root"
+  class="smart-announcement-root"
+  data-page-type="{{ request.page_type }}"
+  data-template="{{ template.name }}"
+  hidden
+></div>
+
+{% schema %}
+{
+  "name": "Smart Announcement Bar",
+  "target": "body",
+  "javascript": "announcement-bar.js",
+  "stylesheet": "announcement-bar.css",
+  "settings": []
+}
+{% endschema %}
