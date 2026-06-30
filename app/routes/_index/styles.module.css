@@ -48,6 +48,23 @@
   padding: 0.4rem;
 }
 
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.footerLinks a {
+  color: #005bd3;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  text-decoration: underline;
+}
+
 .list {
   list-style: none;
   padding: 0;

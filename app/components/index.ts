@@ -9,5 +9,6 @@ export {
   StorefrontSetupBanner,
 } from "./bars";
 export { Dashboard } from "./Dashboard";
+export { LegalPageShell, legalPageLinks } from "./legal";
 export { OnboardingWizard } from "./onboarding";
 export { PolarisLink } from "./PolarisLink";

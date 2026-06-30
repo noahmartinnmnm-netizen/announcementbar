@@ -42,6 +42,8 @@ export default function AppLayout() {
       <s-app-nav>
         <Link to="/app">Dashboard</Link>
         <Link to="/app/bars">Announcement bars</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/privacy">Privacy</Link>
       </s-app-nav>
       <div className="sab-app-shell">
         <Outlet />

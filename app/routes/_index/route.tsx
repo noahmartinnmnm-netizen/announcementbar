@@ -1,4 +1,4 @@
-import { redirect, Form, useLoaderData } from "react-router";
+import { redirect, Form, useLoaderData, Link } from "react-router";
 import type { LoaderFunctionArgs } from "react-router";
 import { login } from "../../shopify.server";
 import styles from "./styles.module.css";
@@ -35,6 +35,10 @@ export default function Index() {
             </button>
           </Form>
         )}
+        <nav className={styles.footerLinks} aria-label="Legal pages">
+          <Link to="/faq">FAQ</Link>
+          <Link to="/privacy">Privacy Policy</Link>
+        </nav>
       </div>
     </div>
   );
